@@ -43,7 +43,7 @@ require("nvim-lsp-installer").setup {}
     })
   })
 
-  -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+
   cmp.setup.cmdline('/', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
@@ -68,7 +68,7 @@ require("nvim-lsp-installer").setup {}
     capabilities = capabilities
   }
 
-  require('lspconfig')['rome'].setup {
+  require('lspconfig')['tsserver'].setup {
     capabilities = capabilities
   }
 
@@ -79,3 +79,15 @@ require("nvim-lsp-installer").setup {}
   require('lspconfig')['bashls'].setup {
     capabilities = capabilities
           }
+  require('lspconfig')['jsonls'].setup {
+    capabilities = capabilities
+          }
+  require('lspconfig')['clangd'].setup {
+    capabilities = capabilities
+          }
+  require('lspconfig')['arduino_language_server'].setup {
+    capabilities = capabilities
+          }
+  require'lspconfig'.gdscript.setup{
+          capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  }
