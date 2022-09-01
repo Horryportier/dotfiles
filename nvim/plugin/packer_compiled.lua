@@ -89,6 +89,21 @@ _G.packer_plugins = {
     path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["e-kaput.nvim"] = {
+    loaded = true,
+    path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/e-kaput.nvim",
+    url = "https://github.com/kaputi/e-kaput.nvim"
+  },
+  ["hologram.nvim"] = {
+    loaded = true,
+    path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/hologram.nvim",
+    url = "https://github.com/edluffy/hologram.nvim"
+  },
+  ["hover.nvim"] = {
+    loaded = true,
+    path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/hover.nvim",
+    url = "https://github.com/lewis6991/hover.nvim"
+  },
   ["nvim-blame-line"] = {
     loaded = true,
     path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/nvim-blame-line",
@@ -98,6 +113,15 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-docs-view"] = {
+    commands = { "DocsViewToggle" },
+    config = { "\27LJ\2\n_\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\rposition\vbottom\nwidth\3<\vheight\3\5\nsetup\14docs-view\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/horryportier/.local/share/nvim/site/pack/packer/opt/nvim-docs-view",
+    url = "https://github.com/amrbashir/nvim-docs-view"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
@@ -109,10 +133,25 @@ _G.packer_plugins = {
     path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-runner.nvim"] = {
+    loaded = true,
+    path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/nvim-runner.nvim",
+    url = "/home/horryportier/Documents/nvim-runner.nvim"
+  },
+  ["nvim-self-py"] = {
+    loaded = true,
+    path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/nvim-self-py",
+    url = "https://github.com/Horryportier/nvim-self-py"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-ts-rainbow"] = {
+    loaded = true,
+    path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
+    url = "https://github.com/p00f/nvim-ts-rainbow"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -123,6 +162,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["pop-punk.vim"] = {
+    loaded = true,
+    path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/pop-punk.vim",
+    url = "https://github.com/bignimbus/pop-punk.vim"
   },
   ["popup.nvim"] = {
     loaded = true,
@@ -149,15 +193,35 @@ _G.packer_plugins = {
     path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
+  ultisnips = {
+    loaded = true,
+    path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/ultisnips",
+    url = "https://github.com/SirVer/ultisnips"
+  },
   ["vim-airline"] = {
     loaded = true,
     path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/vim-airline",
     url = "https://github.com/vim-airline/vim-airline"
   },
+  ["vim-autoformat"] = {
+    loaded = true,
+    path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/vim-autoformat",
+    url = "https://github.com/vim-autoformat/vim-autoformat"
+  },
   ["vim-css-color"] = {
     loaded = true,
     path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/vim-css-color",
     url = "https://github.com/ap/vim-css-color"
+  },
+  ["vim-godot"] = {
+    loaded = true,
+    path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/vim-godot",
+    url = "https://github.com/habamax/vim-godot"
+  },
+  ["vim-snippets"] = {
+    loaded = true,
+    path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/vim-snippets",
+    url = "https://github.com/honza/vim-snippets"
   },
   ["vim-vsnip"] = {
     loaded = true,
@@ -172,6 +236,12 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file DocsViewToggle lua require("packer.load")({'nvim-docs-view'}, { cmd = "DocsViewToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+time([[Defining lazy-load commands]], false)
+
 if should_profile then save_profiles() end
 
 end)
