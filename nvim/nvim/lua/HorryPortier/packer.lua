@@ -7,7 +7,6 @@ return require('packer').startup(function()
         use 'wbthomason/packer.nvim'
         use 'folke/tokyonight.nvim'
         use { "catppuccin/nvim", as = "catppuccin" }
-        use 'bignimbus/pop-punk.vim'
         use 'vim-airline/vim-airline'
         use 'ap/vim-css-color'
         -- lsp
@@ -29,26 +28,11 @@ return require('packer').startup(function()
         use 'hrsh7th/vim-vsnip-integ'
         -- git stuff
         use 'tveskag/nvim-blame-line'
-        -- tag bar
-        use 'preservim/tagbar'
         -- godot plugins
         use 'habamax/vim-godot'
         -- nvim-self-py
         use 'Horryportier/nvim-self-py'
         --use '/home/horryportier/Documents/nvim-self-py.nvim'
-        -- docs view
-        use {
-                "amrbashir/nvim-docs-view",
-                opt = true,
-                cmd = { "DocsViewToggle" },
-                config = function()
-                        require("docs-view").setup {
-                                position = "bottom",
-                                height = 5,
-                                width = 60,
-                        }
-                end
-        }
         -- hover
         use 'lewis6991/hover.nvim'
         -- error
@@ -62,9 +46,6 @@ return require('packer').startup(function()
         use 'p00f/nvim-ts-rainbow'
         -- hologram image viewer
         use 'edluffy/hologram.nvim'
-        -- ranger
-        use 'francoiscabrol/ranger.vim'
-        use 'rbgrouleff/bclose.vim'
         -- harpoon
         use 'ThePrimeagen/harpoon'
         -- color picker

@@ -74,11 +74,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["bclose.vim"] = {
-    loaded = true,
-    path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/bclose.vim",
-    url = "https://github.com/rbgrouleff/bclose.vim"
-  },
   catppuccin = {
     loaded = true,
     path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/catppuccin",
@@ -139,15 +134,6 @@ _G.packer_plugins = {
     path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
-  ["nvim-docs-view"] = {
-    commands = { "DocsViewToggle" },
-    config = { "\27LJ\2\n_\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\nwidth\3<\vheight\3\5\rposition\vbottom\nsetup\14docs-view\frequire\0" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/horryportier/.local/share/nvim/site/pack/packer/opt/nvim-docs-view",
-    url = "https://github.com/amrbashir/nvim-docs-view"
-  },
   ["nvim-lsp-installer"] = {
     loaded = true,
     path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
@@ -188,25 +174,10 @@ _G.packer_plugins = {
     path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["pop-punk.vim"] = {
-    loaded = true,
-    path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/pop-punk.vim",
-    url = "https://github.com/bignimbus/pop-punk.vim"
-  },
   ["popup.nvim"] = {
     loaded = true,
     path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
-  },
-  ["ranger.vim"] = {
-    loaded = true,
-    path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/ranger.vim",
-    url = "https://github.com/francoiscabrol/ranger.vim"
-  },
-  tagbar = {
-    loaded = true,
-    path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/tagbar",
-    url = "https://github.com/preservim/tagbar"
   },
   ["telescope-media-files.nvim"] = {
     loaded = true,
@@ -266,12 +237,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
-
--- Command lazy-loads
-time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file DocsViewToggle lua require("packer.load")({'nvim-docs-view'}, { cmd = "DocsViewToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
-time([[Defining lazy-load commands]], false)
-
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
