@@ -16,6 +16,10 @@ nnoremap("<leader>mq", "<cmd>:lua require(\"harpoon.ui\").nav_file(2)<cr>")
 nnoremap("<leader>mj", "<cmd>:lua require(\"harpoon.ui\").nav_file(3)<cr>")
 nnoremap("<leader>mk", "<cmd>:lua require(\"harpoon.ui\").nav_file(4)<cr>")
 
+-- page jump
+nnoremap("<C-d>", "<C-d>zz")
+nnoremap("<C-u>", "<C-u>zz")
+
 -- tag bar
 nnoremap("<F8>", ":TagbarToggle<CR>")
 -- change from insert to normal mode
