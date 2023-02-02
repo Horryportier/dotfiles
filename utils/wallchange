@@ -1,0 +1,14 @@
+#! /bin/bash
+
+# replace path with folder of your choosing
+p="/home/$(whoami)/Pictures/Wallpapers"
+
+l=$(ls $p)
+
+readarray -t images <<<"$l"
+
+choose=$(gum choose ${images[@]})
+
+
+gsettings set org.gnome.desktop.background picture-uri-dark   "file:///$p/$choose"
+
