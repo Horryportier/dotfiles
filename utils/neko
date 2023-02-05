@@ -1,0 +1,5 @@
+#! /bin/bash
+
+path="/home/$(whoami)/.kitty-conf/def-session.conf"
+
+kitty --session=$path
