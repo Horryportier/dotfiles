@@ -76,11 +76,13 @@ require('lspconfig')['sumneko_lua'].setup {
         }
 }
 require('lspconfig')['gopls'].setup {
-        capabilities = capabilities
+        capabilities = capabilities,
+        cmd = {"gopls", "serve"},
+        filetypes = {"go", "gomod"},
 }
 
 
-require('lspconfig')['jedi_language_server'].setup {
+require('lspconfig')['pyright'].setup {
         capabilities = capabilities
 }
 
@@ -93,9 +95,6 @@ require('lspconfig')['jsonls'].setup {
 require('lspconfig')['clangd'].setup {
         capabilities = capabilities
 }
-require('lspconfig')['arduino_language_server'].setup {
-        capabilities = capabilities
-}
 require'lspconfig'.gdscript.setup{
         capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 }
@@ -104,4 +103,27 @@ require('lspconfig')['dockerls'].setup {
 }
 require('lspconfig')['emmet_ls'].setup {
         capabilities = capabilities
+}
+
+-- arduino sucks
+local my_arduino_fqbn = {
+    ["/home/horryportier/Documents/AI_glove/sketch/WebUpdater"] = "esp32:esp32",
+    ["/home/h4ck3r/dev/arduino/sensor"] = "arduino:mbed:nanorp2040connect",
+}
+
+local DEFAULT_FQBN = "arduino:avr:uno"
+
+require('lspconfig')['arduino_language_server'].setup {
+    on_new_config = function (config, root_dir)
+        local fqbn = my_arduino_fqbn[root_dir]
+        if not fqbn then
+            vim.notify(("Could not find which FQBN to use in %q. Defaulting to %q."):format(root_dir, DEFAULT_FQBN))
+            fqbn = DEFAULT_FQBN
+        end
+        config.cmd = {
+            "arduino-language-server",
+            "-cli-config", "/home/horryportier/.arduino/arduino-cli.yaml",
+            "-fqbn",fqbn
+        }
+    end
 }

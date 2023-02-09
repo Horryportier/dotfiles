@@ -50,4 +50,10 @@ return require('packer').startup(function()
         use 'ThePrimeagen/harpoon'
         -- color picker
         use 'ziontee113/color-picker.nvim'
+        -- vimbegood
+        use 'ThePrimeagen/vim-be-good'
+        -- arduino 
+        use 'stevearc/vim-arduino'
+        -- tinygo 
+        use 'sago35/tinygo.vim'
 end)

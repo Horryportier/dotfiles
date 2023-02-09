@@ -10,4 +10,6 @@ require("HorryPortier.kaput")
 require("HorryPortier.rainbow")
 require("HorryPortier.hologram")
 require("HorryPortier.context")
+require("nvim-self-py").setup("Self")
+
 --require("HorryPortier.obsidian")
