@@ -7,10 +7,11 @@ return require('packer').startup(function()
         -- Packer can manage itself
         use 'wbthomason/packer.nvim'
         use 'folke/tokyonight.nvim'
+        use { "catppuccin/nvim", as = "catppuccin" }
         use 'bignimbus/pop-punk.vim'
         use 'vim-airline/vim-airline'
         use 'ap/vim-css-color'
-        -- lsp
+        ---- lsp
         use 'neovim/nvim-lspconfig'
         use 'hrsh7th/cmp-nvim-lsp'
         use 'hrsh7th/cmp-buffer'
@@ -18,7 +19,7 @@ return require('packer').startup(function()
         use 'hrsh7th/cmp-cmdline'
         use 'hrsh7th/nvim-cmp'
         use 'williamboman/nvim-lsp-installer'
-        -- telescope
+        ---- telescope
         use 'nvim-lua/popup.nvim'
         use 'nvim-lua/plenary.nvim'
         use 'nvim-telescope/telescope.nvim'
@@ -34,9 +35,6 @@ return require('packer').startup(function()
         use 'habamax/vim-godot'
         -- nvim-self-py
         use 'Horryportier/nvim-self-py'
-        --use '/home/horryportier/Documents/nvim-self-py.nvim'
-        -- nvim-runner
-        use '/home/horryportier/Documents/nvim-runner.nvim'
         -- docs view
         use {
                 "amrbashir/nvim-docs-view",
@@ -63,4 +61,6 @@ return require('packer').startup(function()
         use 'p00f/nvim-ts-rainbow'
         -- hologram image viewer
         use 'edluffy/hologram.nvim'
+        -- harpoon 
+        use 'ThePrimeagen/harpoon'
 end)
