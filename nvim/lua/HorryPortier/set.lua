@@ -12,6 +12,7 @@ vim.opt.encoding = "UTF-8"
 vim.opt.spell = true
 vim.opt.hlsearch = false
 vim.opt.colorcolumn = "100"
+vim.opt.mouse = ""
 
 vim.wo.wrap = false
 

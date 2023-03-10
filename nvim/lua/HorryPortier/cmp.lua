@@ -1,6 +1,7 @@
 require("nvim-lsp-installer").setup {}
 -- Setup nvim-cmp.
 local cmp = require'cmp'
+local lspconfig = require('lspconfig')
 
 cmp.setup({
         snippet = {
@@ -105,4 +106,12 @@ require('lspconfig')['jsonls'].setup {
 }
 require('lspconfig')['dockerls'].setup {
         capabilities = capabilities
+}
+
+lspconfig.rust_analyzer.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  cmd = {
+    "rustup", "run", "stable", "rust-analyzer",
+  }
 }

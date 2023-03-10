@@ -61,6 +61,16 @@ return require('packer').startup(function()
         use 'p00f/nvim-ts-rainbow'
         -- hologram image viewer
         use 'edluffy/hologram.nvim'
-        -- harpoon 
+        -- harpoon
         use 'ThePrimeagen/harpoon'
+        -- auto-save
+        use({
+                "Pocco81/auto-save.nvim",
+                config = function()
+                        require("auto-save").setup {
+                                -- your config goes here
+                                -- or just leave it empty :)
+                        }
+                end,
+        })
 end)
