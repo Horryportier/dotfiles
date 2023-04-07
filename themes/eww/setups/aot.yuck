@@ -1,0 +1,33 @@
+(include "./buttons.yuck")
+
+(defwindow main
+  :monitor 0
+  :geometry (geometry :x "0%"
+  :y "0%"
+  :width "100%"
+  :height "100%"
+  :anchor "top center")
+  :stacking "bg"
+  :windowtype "dock"
+  :wm-ignore false
+  (body))
+
+
+
+(defwidget body []
+  (box :class "body"
+    (bar :class "bar")
+    )
+  )
+
+(defwidget bar [?class]
+  (box
+    :halign "start"
+    :valign "start"
+    :class "${class}"
+    (box
+      (button_img :class "btn" :cmd "kitty" :img "./assets/firefox.svg" :img-width 40)
+      )
+    )
+  )
+
