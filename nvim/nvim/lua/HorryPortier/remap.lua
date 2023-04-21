@@ -40,6 +40,7 @@ vim.keymap.set("n","<leader>mk",function() ui.nav_file(4) end)
 -- switch buffers
 nnoremap("<leader>h", "<cmd>:bprevious<cr>")
 nnoremap("<leader>l", "<cmd>:bnext<cr>")
+nnoremap("<leader>dd", "<cmd>:bdelete<cr>")
 nnoremap("<leader>nn", "<cmd>:enew | terminal<cr>")
 -- esc terminal mode
 --vim.api.nvim_set_keymap("n", "<leader>N", ":tnoremap <C-\><C-n>", {})

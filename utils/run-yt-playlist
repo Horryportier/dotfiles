@@ -1,0 +1,5 @@
+#! /bin/bash
+
+url=$1
+
+exec -a uta_mpv mpv --ytdl-format=best --no-video  --volume=50 --input-ipc-server=/tmp/mpvsocket $url
