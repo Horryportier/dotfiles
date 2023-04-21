@@ -18,7 +18,7 @@
 
 (defwidget body []
   (box
-    :style "background-image: url('assets/hell_paradise.jpg'); background-size: 1360px  768px;"
+    :style "background-image: url('assets/hell_paradise.jpg'); background-size: cover;"
     (box
       :class "body"
       :halign "end"
