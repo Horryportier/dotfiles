@@ -1,5 +1,5 @@
-(include "./setups/buttons.yuck")
-(include "./setups/utils.yuck")
+(include "./utils/buttons.yuck")
+(include "./utils/utils.yuck")
 
 
 (defwindow main
@@ -18,7 +18,7 @@
 
 (defwidget body []
   (box
-    :style "background-image: url('assets/hell_paradise.jpg'); background-size: 1360px  768px;"
+    :style "background-image: url('assets/hell_paradise.jpg'); background-size: cover;"
     (box
       :class "body"
       :halign "end"
@@ -53,6 +53,7 @@
               )
             )
           )
+        (player)
         )
       (bar :class "bar")
       )
@@ -90,6 +91,16 @@
         :cmd "flatpak run md.obsidian.Obsidian "
         :path "./assets/obsidian.png"
         :size 30 )
+      (button_img
+        :class "btn"
+        :cmd "flatpak run com.discordapp.Discord"
+        :path "./assets/discord.png"
+        :size 30 )
+      (button_img
+        :class "btn"
+        :cmd "steam"
+        :path "./assets/steam.png"
+        :size 30 )
       (button_text
         :class "btn-sleep"
         :cmd "systemctl suspend"
@@ -110,4 +121,56 @@
     )
   )
 
-
+(defwidget player []
+  (box :class "player"
+       :halign "center"
+       :spacing 4
+       :space-evenly false
+       :orientation "v"
+    (box "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
+    (label :text "${music_name}" :limit-width 30 :wrap true )
+    (box
+      :space-evenly false
+      :orientation "h"
+      :halign "center"
+      (button_img :class "btn"
+                  :cmd "run-yt-playlist 'https://www.youtube.com/playlist?list=PL3AyWHvr_UThgm3gIBroTMRKEhV5zrQEl'"
+                  :path "./assets/yt.svg"
+                  :size 20)
+(button_img :class "btn"
+                  :cmd "run-yt-playlist ~/Music/poggers_stuff_playlist"
+                  :path "./assets/play.png"
+                  :size 20)
+      
+      (metric :label "🔊" :value volume_get :onchange "uta volume {}")
+      (button_img :calss "btn"
+                  :cmd "uta rand"
+                  :path "./assets/rand.png"
+                  :size 20)
+      (button_img :calss "btn"
+                  :cmd "uta quit";"kill $(ps -ef | awk '$8==\"uta_mpv\" {print $2}')"
+                  :path "./assets/kill.png"
+                  :size 20)
+      )
+    (box
+      :halign "center"
+      :spacing 4
+      :orientation "h"
+      (button_img :calss "btn"
+                  :cmd "uta prev"
+                  :path "./assets/prev.png"
+                  :size 20)
+      (button_img :calss "inacive"
+                  :cmd "uta play"
+                  :path "./assets/play.png"
+                  :size 20)
+      (button_img :calss "btn"
+                  :cmd "uta next"
+                  :path "./assets/next.png"
+                  :size 20)
+      )
+    ;(box (label :text is_paused))
+    (metric :label "" :value progress :onchange "uta seek {}" )
+    (box "_______________________")
+    )
+  )

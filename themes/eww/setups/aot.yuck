@@ -1,4 +1,4 @@
-(include "./buttons.yuck")
+(include "./utils/buttons.yuck")
 
 (defwindow main
   :monitor 0
