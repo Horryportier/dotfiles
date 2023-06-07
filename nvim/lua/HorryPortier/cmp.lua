@@ -63,26 +63,24 @@ cmp.setup.cmdline(':', {
 })
 
 -- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-require('lspconfig')['sumneko_lua'].setup {
-        capabilities = capabilities,
 
-        Lua = {
-                diagnostics = {
-                        globals = {'vim'}
-                }
-        }
-}
 require('lspconfig')['gopls'].setup {
         capabilities = capabilities
 }
 
-require('lspconfig')['tsserver'].setup {
-        capabilities = capabilities
-}
 
-require('lspconfig')['jedi_language_server'].setup {
+
+require'lspconfig'.tsserver.setup {}
+--require('lspconfig')['tsserver'].setup {
+--        capabilities = capabilities
+--}
+
+
+--require('lspconfig')['sourcery'].setup {
+--require('lspconfig')['jedi_language_server'].setup {
+require('lspconfig')['pylsp'].setup {
         capabilities = capabilities
 }
 
@@ -99,9 +97,12 @@ require('lspconfig')['arduino_language_server'].setup {
         capabilities = capabilities
 }
 require'lspconfig'.gdscript.setup{
-        capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+        capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 }
 require('lspconfig')['jsonls'].setup {
+        capabilities = capabilities
+}
+require('lspconfig')['marksman'].setup {
         capabilities = capabilities
 }
 require('lspconfig')['dockerls'].setup {
@@ -114,4 +115,7 @@ lspconfig.rust_analyzer.setup {
   cmd = {
     "rustup", "run", "stable", "rust-analyzer",
   }
+}
+require('lspconfig')['asm_lsp'].setup {
+        capabilities = capabilities
 }

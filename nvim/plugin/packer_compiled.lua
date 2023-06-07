@@ -105,6 +105,11 @@ _G.packer_plugins = {
     path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["copy-cut-paste.vim"] = {
+    loaded = true,
+    path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/copy-cut-paste.vim",
+    url = "https://github.com/NLKNguyen/copy-cut-paste.vim"
+  },
   ["e-kaput.nvim"] = {
     loaded = true,
     path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/e-kaput.nvim",
@@ -125,6 +130,11 @@ _G.packer_plugins = {
     path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/hover.nvim",
     url = "https://github.com/lewis6991/hover.nvim"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["nvim-blame-line"] = {
     loaded = true,
     path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/nvim-blame-line",
@@ -137,7 +147,7 @@ _G.packer_plugins = {
   },
   ["nvim-docs-view"] = {
     commands = { "DocsViewToggle" },
-    config = { "\27LJ\2\n_\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\vheight\3\5\rposition\vbottom\nwidth\3<\nsetup\14docs-view\frequire\0" },
+    config = { "\27LJ\2\n_\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\nwidth\3<\vheight\3\5\rposition\vbottom\nsetup\14docs-view\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -168,6 +178,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
     url = "https://github.com/p00f/nvim-ts-rainbow"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/horryportier/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -214,11 +230,6 @@ _G.packer_plugins = {
     path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/ultisnips",
     url = "https://github.com/SirVer/ultisnips"
   },
-  ["vim-airline"] = {
-    loaded = true,
-    path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/vim-airline",
-    url = "https://github.com/vim-airline/vim-airline"
-  },
   ["vim-autoformat"] = {
     loaded = true,
     path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/vim-autoformat",
@@ -248,6 +259,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ",
     url = "https://github.com/hrsh7th/vim-vsnip-integ"
+  },
+  ["yuck.vim"] = {
+    loaded = true,
+    path = "/home/horryportier/.local/share/nvim/site/pack/packer/start/yuck.vim",
+    url = "https://github.com/elkowar/yuck.vim"
   }
 }
 

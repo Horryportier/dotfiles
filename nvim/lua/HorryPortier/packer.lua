@@ -9,7 +9,10 @@ return require('packer').startup(function()
         use 'folke/tokyonight.nvim'
         use { "catppuccin/nvim", as = "catppuccin" }
         use 'bignimbus/pop-punk.vim'
-        use 'vim-airline/vim-airline'
+        use {
+                'nvim-lualine/lualine.nvim',
+                requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+        }
         use 'ap/vim-css-color'
         ---- lsp
         use 'neovim/nvim-lspconfig'
@@ -52,7 +55,7 @@ return require('packer').startup(function()
         use 'lewis6991/hover.nvim'
         -- error
         use 'kaputi/e-kaput.nvim'
-        -- snippets
+        -- snippet
         use 'SirVer/ultisnips'
         use 'honza/vim-snippets'
         -- auto fromat
@@ -73,4 +76,8 @@ return require('packer').startup(function()
                         }
                 end,
         })
+        -- yuck
+        use 'elkowar/yuck.vim'
+        -- copy
+        use 'NLKNguyen/copy-cut-paste.vim'
 end)
