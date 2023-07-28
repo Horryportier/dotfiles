@@ -1,0 +1,154 @@
+$mocha-rosewater: rgb(245, 224, 220);
+$mocha-flamingo: rgb(242, 205, 205);
+$mocha-pink: rgb(245, 194, 231);
+$mocha-mauve: rgb(203, 166, 247);
+$mocha-red: rgb(243, 139, 168);
+$mocha-maroon: rgb(235, 160, 172);
+$mocha-peach: rgb(250, 179, 135);
+$mocha-yellow: rgb(249, 226, 175);
+$mocha-green: rgb(166, 227, 161);
+$mocha-teal: rgb(148, 226, 213);
+$mocha-sky: rgb(137, 220, 235);
+$mocha-sapphire: rgb(116, 199, 236);
+$mocha-blue: rgb(137, 180, 250);
+$mocha-lavender: rgb(180, 190, 254);
+$mocha-text: rgb(205, 214, 244);
+$mocha-subtext1: rgb(186, 194, 222);
+$mocha-subtext0: rgb(166, 173, 200);
+$mocha-overlay2: rgb(147, 153, 178);
+$mocha-overlay1: rgb(127, 132, 156);
+$mocha-overlay0: rgb(108, 112, 134);
+$mocha-surface2: rgb(88, 91, 112);
+$mocha-surface1: rgb(69, 71, 90);
+$mocha-surface0: rgb(49, 50, 68);
+$mocha-base: rgb(30, 30, 46);
+$mocha-mantle: rgb(24, 24, 37);
+$mocha-crust: rgb(17, 17, 27);
+
+$border-size: 0.01em;
+
+* {
+
+}
+
+.bar {
+
+        padding-top: 1em;
+        padding-right: 1em;
+
+        button {
+                color: $mocha-crust;
+                background: rgba($mocha-overlay0, 0.1);
+                border: solid $border-size;
+                border-color: rgba($mocha-crust, 1);
+        }
+
+        button:hover {
+                background: rgba($mocha-mantle, 0.2);
+                border: dotted $border-size;
+                border-color: rgba($mocha-mantle, 0.8);
+        }
+}
+
+
+
+.time-box {
+        padding-top: 1em;
+        padding-right: 1em;
+}
+
+.time  {
+        font-size: 1.5em;
+        color: $mocha-crust;
+        background: rgba($mocha-overlay0, 0.1);
+        border: solid $border-size;
+        border-color: rgba($mocha-crust, 0.8);
+
+}
+.keys-box {
+        padding-top: 0.8em;
+        padding-right: 1em;
+}
+.img-box {
+        padding-top: 15em;
+        padding-left: 11em;
+}
+
+
+.keys {
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+        font-size: 1.5em;
+        color: $mocha-crust;
+        background: rgba($mocha-overlay0, 0.1);
+        border: solid $border-size;
+        border-color: rgba($mocha-crust, 0.8);
+
+        button {
+                all: unset;
+        }
+}
+
+
+.notes-box {
+        padding-left: 15em;
+        padding-right: 15em;
+        padding-bottom: 10em;
+
+}
+
+.notes {
+        padding: 2em;
+        color: $mocha-crust;
+        background: rgba($mocha-overlay0, 0.1);
+        border: solid $border-size;
+        border-color: rgba($mocha-crust, 0.8);
+        button {
+                all: unset;
+        }
+}
+
+.player {
+        padding-left: 2em;
+        background: rgba($mocha-overlay0, 0.1);
+        border: solid $border-size;
+        border-color: $mocha-crust;
+        button {
+                background: unset;
+        }
+}
+
+.metric label {
+        color: $mocha-crust;
+}
+.metric scale trough highlight {
+        all: unset;
+        background-color: $mocha-overlay0;
+        color: $mocha-crust;
+        border-radius: $border-size;
+}
+.metric scale trough {
+        all: unset;
+        background-color: $mocha-overlay2;
+        border-radius: $border-size;
+        min-height: 3px;
+        min-width: 50px;
+        margin-left: 10px;
+        margin-right: 20px;
+}
+.metric scale trough highlight {
+        all: unset;
+        background-color: $mocha-crust;
+        color: $mocha-crust;
+        border-radius: $border-size;
+}
+.metric scale trough {
+        all: unset;
+        background-color: $mocha-overlay0;
+        border-radius: $border-size;
+        min-height: 3px;
+        min-width: 50px;
+        margin-left: 10px;
+        margin-right: 20px;
+}
+

@@ -1,0 +1,5 @@
+#! /bin/bash
+
+cd  /usr/share/X11/xkb/symbols/
+
+setxkbmap real-prog-dvorak

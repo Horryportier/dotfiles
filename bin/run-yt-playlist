@@ -1,0 +1,36 @@
+#! /bin/bash
+
+
+declare -A playlists
+
+playlists["working"]="https://www.youtube.com/playlist?list=PL3AyWHvr_UThgm3gIBroTMRKEhV5zrQEl"
+playlists["pog_stuff"]="https://www.youtube.com/playlist?list=PL3AyWHvr_UTgqqXii2AI4WF2s-WGQ2GlQ"
+playlists["the_used"]="https://www.youtube.com/playlist?list=PLmwY8lEP2O92UDRnStKODVZi8WlSi0Mug"
+playlists["disc"]="/home/horryportier/Music/poggers_stuff_playlist"
+
+selected="$(gum choose "${!playlists[@]}")"
+
+result=${playlists[$selected]}
+
+conf=""
+
+gum confirm "play" && conf="no"
+if [[ -z "$conf" ]];  then
+  gum style --foreground="1" "abording"
+  exit 1
+fi
+
+gum style --foreground="2" "strting up $selected"
+
+
+uta -k &
+sleep 3
+
+uta $result --start &
+sleep 3
+exit 0
+
+
+
+
+
