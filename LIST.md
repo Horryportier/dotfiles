@@ -27,18 +27,18 @@
 
 # to install 
 - [ ] leauge of legends 😎 
-- [ ] godot
-- [ ] steam
-- [ ] rust 
-- [ ] go
-- [ ] lua 
-- [ ] obsidian
-- [ ] nvim-chad 
-- [ ] discord 
+- [x] godot
+- [x] steam
+- [x] rust 
+- [x] go
+- [x] lua 
+- [x] obsidian
+- [x] nvim-chad 
+- [x] discord 
 
 # system 
-- [ ] no topbar plugin 
-- [ ] gnome-tweaks
+- [x] no topbar plugin 
+- [x] gnome-tweaks
 
 # keybinds 
 super+shift+u -> switch to querty 
