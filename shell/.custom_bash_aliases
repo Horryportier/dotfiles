@@ -43,3 +43,7 @@ alias fpd="echo file://$(pwd)"
 if app_exists workspace_switcher; then
 	alias ws="workspace_switcher"
 fi
+
+if app_exists dune; then
+	alias dune_exec="dune exec $(basename $(pwd))"
+fi

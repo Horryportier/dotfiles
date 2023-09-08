@@ -1,0 +1,63 @@
+#! /bin/bash
+
+f() {
+	find . -maxdepth 2 -name "$1"
+}
+
+log() {
+	echo -e "\e[32m$1\e[0m"
+}
+
+err() {
+	echo -e "\e[31m$1\e[0m"
+}
+
+app_exists() {
+	command -v $1 &> /dev/null
+}
+type=""
+
+if [ ! -z "$(f '*.rs')" ]; then 
+	type="rs"
+fi
+
+if [ ! -z "$(f '*.opam')" ]; then 
+	type="ml"
+fi
+
+if [ ! -z "$(f '*.go')" ]; then 
+	type="go"
+fi
+
+
+
+case $type in 
+	'ml')
+		if ! app_exists dune; then
+			err "DUNE NOT IN PATH"
+			exit 1
+		fi 
+		name=$(basename $(pwd))
+		log "Running dune exec $name"
+		dune exec $name
+		;;
+	'rs') 
+		if ! app_exists cargo; then
+			err "CARGO NOT IN PATH"
+			exit 1
+		fi
+		log "Running cargo run"
+		cargo run
+		;;
+	'go')
+		if ! app_exists go; then
+			err "GO NOT IN PATH"
+			exit 1
+		fi
+		log "Running go run main.go"
+		go run main.go
+		;;
+	*)
+		err "UNKNOWN"
+		;;
+esac
