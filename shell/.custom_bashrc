@@ -1,0 +1,20 @@
+#! /bin/bash
+
+# set main editor to nvim
+export EDITOR='nvim'
+
+# cheak and source fzf competion
+fzf_completion="$HOME/.fzf-complete/fzf-bash-completion.sh"
+if [ -f $fzf_completion ]; then
+	source $fzf_completion
+	bind -x '"\t": fzf_bash_completion'
+fi 
+
+if [ -f $HOME/.fzf.bash ]; then
+	source $HOME/.fzf.bash
+fi
+
+
+# init starship
+
+eval "$(starship init bash)"

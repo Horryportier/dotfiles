@@ -1,0 +1,16 @@
+-e
+-e
+-e 
+
+
+# .custom_bashrc is your setup file and you should change it over .bashrc
+ source /home/horry/custom_bashrc
+
+
+# .custom_bashrc is your setup file and you should change it over .bashrc
+ source /home/horry/custom_bashrc
+
+
+# .custom_bashrc is your setup file and you should change it over .bashrc
+ source /home/horry/custom_bashrc
+

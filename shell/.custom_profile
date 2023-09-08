@@ -1,0 +1,30 @@
+#! /bin/bash
+
+# *ENV'S*
+# UTA ENV VARS
+export UTA_LIST_FILE=$HOME/.uta/playlists.txt
+# GIT ENV VARS
+export GIT_EDITOR="nvim"
+
+
+# ocmal stuff
+eval $(opam env)
+# rust stuff
+. "$HOME/.cargo/env"
+# brew stuff
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+#PATH
+paths=(
+	"$HOME/go/bin"
+	"/usr/local/go/bin"
+	"$HOME/lol"
+	"$HOME/.uta"
+)
+
+for t in ${paths[@]}; do
+	if [ -d "$t" ]; then
+		export PATH=$PATH:$t
+	fi
+done 
+

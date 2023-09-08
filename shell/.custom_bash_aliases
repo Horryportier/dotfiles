@@ -1,0 +1,45 @@
+#! /bin/bash
+
+app_exists() {
+	command -v $1 &> /dev/null
+}
+
+if app_exists nvim; then
+	alias vim="nvim"
+	alias gvim="nvim --listen godothost ."
+fi 
+
+
+if app_exists exa; then
+	alias ls="exa"
+fi
+
+nvim_dir="$HOME/.config/nvim"
+if [ -d $nvim_dir ]; then
+	alias nconfig="vim $nvim_dir"
+fi
+
+
+if app_exists Watcher; then
+	alias horry="Watcher eune HorryPortier6 -s -r"
+fi
+
+# esp tools
+espsh="$HOME/export-esp.sh"
+if [ -f $espsh ]; then
+	alias get_esprs='. $espsh'
+fi
+
+if app_exists nnn; then
+	alias nnn='nnn -e'
+	alias n='nnn'
+fi
+
+# utils
+alias remote="git remote show -n origin | head -n 2 | tail -n 1 | sed -n -e 's/^.*URL: //p' | cut -d '@' -f 2 | tr : / | sed  's/^/https\:\/\//'"
+alias fpd="echo file://$(pwd)"
+
+
+if app_exists workspace_switcher; then
+	alias ws="workspace_switcher"
+fi
