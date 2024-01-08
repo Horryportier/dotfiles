@@ -1,0 +1,46 @@
+general {
+  output_format = "i3bar"
+  colors = true
+  color_good = "#31748f"
+  color_degraded = "#eb6f92"
+  color_bad = "#eb6f92"
+}
+
+order += "read_file uta"
+order += "disk /"
+order += "memory"
+order += "load"
+order += "tztime local"
+order += "tztime berlin"
+
+
+
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S"
+        hide_if_equals_localtime = true
+}
+
+tztime berlin {
+        format = "%Y-%m-%d %H:%M:%S %Z"
+        timezone = "Europe/Warsaw"
+}
+
+load {
+        format = "%5min"
+}
+
+memory {
+        format = "%used"
+        threshold_degraded = "10%"
+        format_degraded = "MEMORY: %free"
+}
+
+disk "/" {
+        format = "%free"
+}
+
+read_file uta {
+        format = "%content"
+        path = "/home/horry/.uta/i3_data"
+        max_characters = 50
+}
